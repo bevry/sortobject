@@ -1,0 +1,40 @@
+{
+	"name": "sortobject",
+	"version": "1.0.0",
+	"description": "Returns a copy of an object, sorted deeply by its keys, without mangling any arrays inside of it",
+	"homepage": "https://github.com/bevry/sortobject",
+	"keywords": [
+		"sort","object","keys","comparator","array","deep","deeply"
+	],
+	"author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+	"maintainers": [
+		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+	],
+	"contributors": [
+		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+	],
+	"bugs": {
+		"url": "https://github.com/bevry/sortobject/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/bevry/sortobject.git"
+	},
+	"engines": {
+		"node": ">=0.4"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"coffee-script": "~1.6.2",
+		"joe": "~1.2.0",
+		"joe-reporter-console": "~1.2.1",
+		"chai": "~1.5.0"
+	},
+	"directories": {
+		"lib": "./out/lib"
+	},
+	"scripts": {
+		"test": "node ./out/test/sortobject-test.js"
+	},
+	"main": "./out/lib/sortobject.js"
+}
