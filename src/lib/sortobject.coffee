@@ -1,5 +1,5 @@
 # Define
-sortObject = (obj,comparator=null) ->
+sortObject = (obj,comparator) ->
 	# Arrays
 	if Array.isArray(obj)
 		result = []
