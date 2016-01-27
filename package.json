@@ -1,40 +1,88 @@
 {
-	"name": "sortobject",
-	"version": "1.0.0",
-	"description": "Returns a copy of an object, sorted deeply by its keys, without mangling any arrays inside of it",
-	"homepage": "https://github.com/bevry/sortobject",
-	"keywords": [
-		"sort","object","keys","comparator","array","deep","deeply"
-	],
-	"author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
-	"maintainers": [
-		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
-	],
-	"contributors": [
-		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
-	],
-	"bugs": {
-		"url": "https://github.com/bevry/sortobject/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "http://github.com/bevry/sortobject.git"
-	},
-	"engines": {
-		"node": ">=0.4"
-	},
-	"dependencies": {},
-	"devDependencies": {
-		"coffee-script": "~1.6.2",
-		"joe": "~1.2.0",
-		"joe-reporter-console": "~1.2.1",
-		"chai": "~1.5.0"
-	},
-	"directories": {
-		"lib": "./out/lib"
-	},
-	"scripts": {
-		"test": "node ./out/test/sortobject-test.js"
-	},
-	"main": "./out/lib/sortobject.js"
+  "title": "Sort Object",
+  "name": "sortobject",
+  "version": "1.0.1",
+  "description": "Returns a copy of an object, sorted deeply by its keys, without mangling any arrays inside of it",
+  "homepage": "https://github.com/bevry/sortobject",
+  "license": "MIT",
+  "keywords": [
+    "sort",
+    "object",
+    "keys",
+    "comparator",
+    "array",
+    "deep",
+    "deeply"
+  ],
+  "badges": {
+    "list": [
+      "travisci",
+      "npmversion",
+      "npmdownloads",
+      "daviddm",
+      "daviddmdev",
+      "---",
+      "slackin",
+      "patreon",
+      "gratipay",
+      "flattr",
+      "paypal",
+      "bitcoin",
+      "wishlist"
+    ],
+    "config": {
+      "patreonUsername": "bevry",
+      "gratipayUsername": "bevry",
+      "flattrUsername": "balupton",
+      "paypalURL": "https://bevry.me/paypal",
+      "bitcoinURL": "https://bevry.me/bitcoin",
+      "wishlistURL": "https://bevry.me/wishlist",
+      "slackinURL": "https://slack.bevry.me"
+    }
+  },
+  "author": "2012+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+  "maintainers": [
+    "Benjamin Lupton <b@lupton.cc> (https://balupton.com)"
+  ],
+  "sponsors": [
+    "SimpleTee"
+  ],
+  "contributors": [
+    "Benjamin Lupton <b@lupton.cc> (https://balupton.com)",
+    "Serge Havas <sinewyk@gmail.com> (https://github.com/Sinewyk)"
+  ],
+  "bugs": {
+    "url": "https://github.com/bevry/sortobject/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/bevry/sortobject.git"
+  },
+  "engines": {
+    "node": ">=0.4"
+  },
+  "browsers": true,
+  "dependencies": {},
+  "devDependencies": {
+    "coffee-script": "~1.6.2",
+    "joe": "~1.2.0",
+    "joe-reporter-console": "~1.2.1",
+    "chai": "~1.5.0",
+    "projectz": "^1.0.9"
+  },
+  "scripts": {
+    "clean": "node --harmony nakefile.js clean",
+    "setup": "node --harmony nakefile.js setup",
+    "compile": "node --harmony nakefile.js compile",
+    "watch": "node --harmony nakefile.js watch",
+    "verify": "node --harmony nakefile.js verify",
+    "meta": "node --harmony nakefile.js meta",
+    "prepare": "node --harmony nakefile.js prepare",
+    "release": "node --harmony nakefile.js release",
+    "test": "node --harmony ./out/test/index.js"
+  },
+  "main": "./out/lib/index.js",
+  "nakeConfiguration": {
+    "COFFEE_SRC_PATH": "src"
+  }
 }
