@@ -1,9 +1,7 @@
-'use strict'
-
 // Import
-const deepEqual = require('assert-helpers').deepEqual
+const {deepEqual} = require('assert-helpers')
 const joe = require('joe')
-const sortObject = require('../../')
+const sortObject = require('../')
 
 // Task
 joe.suite('sortObject', function (suite, test) {

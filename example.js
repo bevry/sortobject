@@ -1,4 +1,4 @@
-var sortObject = require('./');
+var sortObject = require('./')
 var fixture = {
     "c": true,
     "a": true,
@@ -22,9 +22,9 @@ var fixture = {
             ]
         }
     ]
-};
-var actual = sortObject(fixture);
-console.log(JSON.stringify(actual,null,4)); /* {
+}
+var actual = sortObject(fixture)
+console.log(JSON.stringify(actual,null,4)) /* {
     "a": true,
     "b": null,
     "c": true,
