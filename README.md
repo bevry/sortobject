@@ -148,7 +148,7 @@ These amazing people are maintaining this project:
 
 These amazing people have contributed finances to this project:
 
-<ul><li>SimpleTee</li></ul>
+<ul><li><a href="https://www.govests.com.au">GoVests</a></li></ul>
 
 Become a sponsor!
 
