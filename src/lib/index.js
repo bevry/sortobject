@@ -1,28 +1,40 @@
-# Define
-sortObject = (obj,comparator) ->
-	# Arrays
-	if Array.isArray(obj)
-		result = []
-		for value in obj
-			# Recurse if object or array
-			value = sortObject(value,comparator)  if value? and typeof value is 'object'  # Objects and Arrays
-			# Push
+'use strict'
+module.exports = function sortObject (obj, comparator) {
+	// Arrays
+	if ( Array.isArray(obj) ) {
+		const result = []
+		for ( let i = 0; i < obj.length; ++i ) {
+			// Fetch
+			let value = obj[i]
+
+			// Recurse if object or array
+			if ( value != null && typeof value === 'object' ) {
+				value = sortObject(value, comparator)
+			}
+
+			// Push
 			result.push(value)
+		}
+		return result
+	}
 
-	# Objects
-	else
-		result = {}
-		sortedKeys = Object.keys(obj).sort(comparator)
-		for key in sortedKeys
-			# Fetch
-			value = obj[key]
-			# Recurse if object or array
-			value = sortObject(value,comparator)  if value? and typeof value is 'object'
-			# Push
+	// Objects
+	else {
+		const result = {}
+		const sortedKeys = Object.keys(obj).sort(comparator)
+		for ( let i = 0; i < sortedKeys.length; ++i ) {
+			// Fetch
+			const key = sortedKeys[i]
+			let value = obj[key]
+
+			// Recurse if object or array
+			if ( value != null && typeof value === 'object' ) {
+				value = sortObject(value, comparator)
+			}
+
+			// Push
 			result[key] = value
-
-	# Return
-	return result
-
-# Export
-module.exports = sortObject
+		}
+		return result
+	}
+}

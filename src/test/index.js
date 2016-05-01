@@ -1,49 +1,53 @@
-# Import
-{expect} = require('chai')
-joe = require('joe')
-sortObject = require('../../')
+'use strict'
 
-# Task
-joe.describe 'sortObject', (describe,it) ->
-	it 'should work', ->
-		# Prepare
-		fixture =
-			c: true
-			a: true
-			b: null
-			d: [
-				c: true
-				a: true
+// Import
+const deepEqual = require('assert-helpers').deepEqual
+const joe = require('joe')
+const sortObject = require('../../')
+
+// Task
+joe.suite('sortObject', function (suite, test) {
+	test('should work', function () {
+		// Prepare
+		const fixture = {
+			c: true,
+			a: true,
+			b: null,
+			d: [{
+				c: true,
+				a: true,
 				b: null
-			,
-				c: true
-				a: true
-				b: null
-				d: [
-					c: true
-					a: true
+			}, {
+				c: true,
+				a: true,
+				b: null,
+				d: [{
+					c: true,
+					a: true,
 					b: null
-				]
-			]
-		expected =
-			a: true
-			b: null
-			c: true
-			d: [
-				a: true
-				b: null
+				}]
+			}]
+		}
+		const expected = {
+			a: true,
+			b: null,
+			c: true,
+			d: [{
+				a: true,
+				b: null,
 				c: true
-			,
-				a: true
-				b: null
-				c: true
-				d: [
-					a: true
-					b: null
+			}, {
+				a: true,
+				b: null,
+				c: true,
+				d: [{
+					a: true,
+					b: null,
 					c: true
-				]
-			]
-
-		actual = sortObject(fixture)
-
-		expect(actual).to.deep.equal(expected)
+				}]
+			}]
+		}
+		const actual = sortObject(fixture)
+		deepEqual(actual, expected, 'result to be as expected')
+	})
+})
