@@ -1,6 +1,9 @@
 # History
 
-## v1.0.1 2016 May 2
+## v1.1.1 2016 May 2
+- Fixed `browser` field
+
+## v1.1.0 2016 May 2
 - Converted from CoffeeScript to JavaScript
 - Updated base files
 

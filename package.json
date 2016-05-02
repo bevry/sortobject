@@ -1,7 +1,7 @@
 {
   "title": "Sort Object",
   "name": "sortobject",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Returns a copy of an object, sorted deeply by its keys, without mangling any arrays inside of it",
   "homepage": "https://github.com/bevry/sortobject",
   "license": "MIT",
@@ -86,7 +86,7 @@
     }
   ],
   "main": "index.js",
-  "browser": "es2015/lib/index.js",
+  "browser": "es2015/index.js",
   "scripts": {
     "setup": "npm install",
     "clean": "rm -Rf ./docs ./es2015",
