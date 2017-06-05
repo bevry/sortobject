@@ -1,3 +1,4 @@
+'use strict';
 module.exports = function sortObject (obj, comparator) {
 	// Arrays
 	if ( Array.isArray(obj) ) {
