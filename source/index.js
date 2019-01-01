@@ -1,14 +1,15 @@
-'use strict';
-module.exports = function sortObject (obj, comparator) {
+'use strict'
+
+module.exports = function sortObject(obj, comparator) {
 	// Arrays
-	if ( Array.isArray(obj) ) {
+	if (Array.isArray(obj)) {
 		const result = []
-		for ( let i = 0; i < obj.length; ++i ) {
+		for (let i = 0; i < obj.length; ++i) {
 			// Fetch
 			let value = obj[i]
 
 			// Recurse if object or array
-			if ( value != null && typeof value === 'object' ) {
+			if (value != null && typeof value === 'object') {
 				value = sortObject(value, comparator)
 			}
 
@@ -22,13 +23,13 @@ module.exports = function sortObject (obj, comparator) {
 	else {
 		const result = {}
 		const sortedKeys = Object.keys(obj).sort(comparator)
-		for ( let i = 0; i < sortedKeys.length; ++i ) {
+		for (let i = 0; i < sortedKeys.length; ++i) {
 			// Fetch
 			const key = sortedKeys[i]
 			let value = obj[key]
 
 			// Recurse if object or array
-			if ( value != null && typeof value === 'object' ) {
+			if (value != null && typeof value === 'object') {
 				value = sortObject(value, comparator)
 			}
 
