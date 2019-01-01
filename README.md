@@ -61,39 +61,53 @@ Returns a copy of an object, sorted deeply by its keys, without mangling any arr
 <li><code>sortobject/edition-browsers/index.js</code> is esnext compiled for browsers with require for modules</li>
 <li><code>sortobject/edition-node-0.12/index.js</code> is esnext compiled for node.js 0.12 with require for modules</li></ul>
 
+<h3><a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a></h3>
+
+This project provides its type information via inline <a href="http://usejsdoc.org" title="JSDoc is an API documentation generator for JavaScript, similar to Javadoc or phpDocumentor">JSDoc Comments</a>. To make use of this in <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a>, set your <code>maxNodeModuleJsDepth</code> compiler option to `5` or thereabouts. You can accomlish this via your `tsconfig.json` file like so:
+
+``` json
+{
+  "compilerOptions": {
+    "maxNodeModuleJsDepth": 5
+  }
+}
+```
+
 <!-- /INSTALL -->
 
 
 ## Usage
 
-``` javascript
+[API Documentation.](http://master.sortobject.bevry.surge.sh/docs/)
+
+```javascript
 var sortObject = require('sortobject')
 var fixture = {
-    "c": true,
-    "a": true,
-    "b": null,
-    "d": [
+    c: true,
+    a: true,
+    b: null,
+    d: [
         {
-            "c": true,
-            "a": true,
-            "b": null
+            c: true,
+            a: true,
+            b: null
         },
         {
-            "c": true,
-            "a": true,
-            "b": null,
-            "d": [
+            c: true,
+            a: true,
+            b: null,
+            d: [
                 {
-                    "c": true,
-                    "a": true,
-                    "b": null
+                    c: true,
+                    a: true,
+                    b: null
                 }
             ]
         }
     ]
 }
 var actual = sortObject(fixture)
-console.log(JSON.stringify(actual,null,4))  /* {
+console.log(JSON.stringify(actual, null, 4)) /* {
     "a": true,
     "b": null,
     "c": true,

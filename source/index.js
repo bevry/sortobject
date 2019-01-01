@@ -1,6 +1,20 @@
 'use strict'
 
-module.exports = function sortObject(obj, comparator) {
+/**
+ * A typical comparator for sorting.
+ * @callback Comparator
+ * @param {any} a
+ * @param {any} b
+ * @returns {number}
+ */
+
+/**
+ * Returns a copy of an object, sorted deeply by its keys, without mangling any arrays inside of it.
+ * @param {object} obj The unsorted object.
+ * @param {Comparator} [comparator] An optional comparator to use to sort the keys.
+ * @returns {object} The new sorted object.
+ */
+function sortObject(obj, comparator) {
 	// Arrays
 	if (Array.isArray(obj)) {
 		const result = []
@@ -39,3 +53,5 @@ module.exports = function sortObject(obj, comparator) {
 		return result
 	}
 }
+
+module.exports = sortObject
