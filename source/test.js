@@ -3,7 +3,7 @@
 // Import
 const { deepEqual } = require('assert-helpers')
 const kava = require('kava')
-const sortObject = require('../')
+const sortObject = require('./')
 
 // Task
 kava.suite('sortObject', function(suite, test) {
