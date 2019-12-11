@@ -1,5 +1,11 @@
 # History
 
+## v2.4.0 2019 December 11
+
+-   Changed supported node engines from `>= 8` to `>= 5`
+    -   Fixes [errlop#41](https://github.com/bevry/errlop/issues/41)
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v2.3.0 2019 December 10
 
 -   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)

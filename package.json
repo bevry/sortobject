@@ -1,7 +1,7 @@
 {
   "title": "Sort Object",
   "name": "sortobject",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "Returns a copy of an object, sorted deeply by its keys, without mangling any arrays inside of it",
   "homepage": "https://github.com/bevry/sortobject",
   "license": "MIT",
@@ -68,11 +68,11 @@
     "url": "https://github.com/bevry/sortobject.git"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=6"
   },
   "editions": [
     {
-      "description": "esnext source code with require for modules",
+      "description": "esnext source code for Node.js with require for modules",
       "directory": "source",
       "entry": "index.js",
       "tags": [
@@ -81,12 +81,12 @@
         "require"
       ],
       "engines": {
-        "node": "8 || 10 || 12",
+        "node": "6 || 8 || 10 || 12 || 13",
         "browsers": false
       }
     },
     {
-      "description": "esnext compiled for browsers with require for modules",
+      "description": "esnext compiled for web browsers with require for modules",
       "directory": "edition-browsers",
       "entry": "index.js",
       "tags": [
@@ -107,19 +107,19 @@
     "@babel/core": "^7.7.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
     "@babel/preset-env": "^7.7.6",
-    "assert-helpers": "^5.8.0",
+    "assert-helpers": "4.10.0",
     "eslint": "^6.7.2",
     "eslint-config-bevry": "^2.3.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-prettier": "^3.1.1",
     "jsdoc": "^3.6.3",
-    "kava": "^4.4.0",
+    "kava": "3.2.0",
     "minami": "^1.2.3",
     "prettier": "^1.19.1",
     "projectz": "^1.16.0",
     "surge": "^0.21.3",
-    "valid-directory": "^1.5.0"
+    "valid-directory": "^1.6.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
@@ -162,7 +162,9 @@
           [
             "@babel/preset-env",
             {
-              "targets": "defaults",
+              "targets": {
+                "browsers": "defaults"
+              },
               "modules": false
             }
           ]
@@ -172,5 +174,9 @@
         ]
       }
     }
+  },
+  "boundation": {
+    "minimumSupportNodeVersion": "5",
+    "minimumTestNodeVersion": "5"
   }
 }

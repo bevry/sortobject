@@ -56,8 +56,8 @@ Returns a copy of an object, sorted deeply by its keys, without mangling any arr
 <p>This package is published with the following editions:</p>
 
 <ul><li><code>sortobject</code> aliases <code>sortobject/source/index.js</code></li>
-<li><code>sortobject/source/index.js</code> is esnext source code with require for modules</li>
-<li><code>sortobject/edition-browsers/index.js</code> is esnext compiled for browsers with require for modules</li></ul>
+<li><code>sortobject/source/index.js</code> is esnext source code for Node.js with require for modules</li>
+<li><code>sortobject/edition-browsers/index.js</code> is esnext compiled for web browsers with require for modules</li></ul>
 
 <h3><a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a></h3>
 
