@@ -1,9 +1,7 @@
-'use strict'
-
 // Import
-const { deepEqual } = require('assert-helpers')
-const kava = require('kava')
-const sortObject = require('./')
+import { deepEqual } from 'assert-helpers'
+import kava from 'kava'
+import sortObject from './index.js'
 
 // Task
 kava.suite('sortObject', function(suite, test) {

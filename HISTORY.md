@@ -1,5 +1,11 @@
 # History
 
+## v3.0.0 2019 December 18
+
+-   Converted from JavaScript to TypeScript
+-   If you are using CommonJS, you must now do `require('sortobject').default`
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v2.4.0 2019 December 11
 
 -   Changed supported node engines from `>= 8` to `>= 5`
