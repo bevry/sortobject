@@ -172,9 +172,5 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
-  },
-  "boundation": {
-    "minimumSupportNodeVersion": "5",
-    "minimumTestNodeVersion": "5"
   }
 }
