@@ -7,7 +7,7 @@ const fixture = {
 		{
 			c: true,
 			a: true,
-			b: null
+			b: null,
 		},
 		{
 			c: true,
@@ -17,11 +17,11 @@ const fixture = {
 				{
 					c: true,
 					a: true,
-					b: null
-				}
-			]
-		}
-	]
+					b: null,
+				},
+			],
+		},
+	],
 }
 const actual = sortObject(fixture)
 console.log(

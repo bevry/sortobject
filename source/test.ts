@@ -4,8 +4,8 @@ import kava from 'kava'
 import sortObject from './index.js'
 
 // Task
-kava.suite('sortObject', function(suite, test) {
-	test('should work', function() {
+kava.suite('sortObject', function (suite, test) {
+	test('should work', function () {
 		// Prepare
 		const fixture = {
 			c: true,
@@ -15,7 +15,7 @@ kava.suite('sortObject', function(suite, test) {
 				{
 					c: true,
 					a: true,
-					b: null
+					b: null,
 				},
 				{
 					c: true,
@@ -25,11 +25,11 @@ kava.suite('sortObject', function(suite, test) {
 						{
 							c: true,
 							a: true,
-							b: null
-						}
-					]
-				}
-			]
+							b: null,
+						},
+					],
+				},
+			],
 		}
 		const expected = {
 			a: true,
@@ -39,7 +39,7 @@ kava.suite('sortObject', function(suite, test) {
 				{
 					a: true,
 					b: null,
-					c: true
+					c: true,
 				},
 				{
 					a: true,
@@ -49,11 +49,11 @@ kava.suite('sortObject', function(suite, test) {
 						{
 							a: true,
 							b: null,
-							c: true
-						}
-					]
-				}
-			]
+							c: true,
+						},
+					],
+				},
+			],
 		}
 		const actual = sortObject(fixture)
 		deepEqual(actual, expected, 'result to be as expected')
