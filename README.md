@@ -105,7 +105,7 @@ console.log(JSON.stringify(actual, null, 4)) /* {
 
 ``` html
 <script type="module">
-    import pkg from '//cdn.pika.dev/sortobject/^4.0.0'
+    import pkg from '//cdn.pika.dev/sortobject/^4.1.0'
 </script>
 ```
 
@@ -113,7 +113,7 @@ console.log(JSON.stringify(actual, null, 4)) /* {
 
 ``` html
 <script type="module">
-    import pkg from '//unpkg.com/sortobject@^4.0.0'
+    import pkg from '//unpkg.com/sortobject@^4.1.0'
 </script>
 ```
 
@@ -121,7 +121,7 @@ console.log(JSON.stringify(actual, null, 4)) /* {
 
 ``` html
 <script type="module">
-    import pkg from '//dev.jspm.io/sortobject@4.0.0'
+    import pkg from '//dev.jspm.io/sortobject@4.1.0'
 </script>
 ```
 
