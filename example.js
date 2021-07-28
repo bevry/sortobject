@@ -24,9 +24,7 @@ const fixture = {
 	],
 }
 const actual = sortObject(fixture)
-console.log(
-	JSON.stringify(actual, null, 4)
-) /* {
+console.log(JSON.stringify(actual, null, 4)) /* {
     "a": true,
     "b": null,
     "c": true,
