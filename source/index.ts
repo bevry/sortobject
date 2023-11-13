@@ -12,7 +12,7 @@ type IndexedObject = { [key: string]: any }
  */
 export function sortArray<T extends any[]>(
 	subject: T,
-	comparator?: KeyComparator,
+	comparator?: KeyComparator
 ): T {
 	const result = []
 	for (let value of subject) {
@@ -40,7 +40,7 @@ export function sortArray<T extends any[]>(
  */
 export default function sortObject<T extends IndexedObject>(
 	subject: T,
-	comparator?: KeyComparator,
+	comparator?: KeyComparator
 ): T {
 	const result: IndexedObject = {} as T
 	const sortedKeys = Object.keys(subject).sort(comparator)
