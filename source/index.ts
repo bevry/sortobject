@@ -20,7 +20,11 @@ export function sortArray<T extends any[]>(
 		if (value != null) {
 			if (Array.isArray(value)) {
 				value = sortArray(value, comparator)
-			} else if (typeof value === 'object') {
+			} else if (
+				typeof value === 'object' &&
+				Object.prototype.toString.call(value) === '[object Object]' &&
+				Object.getPrototypeOf(value) === Object.prototype
+			) {
 				/* eslint no-use-before-define:0 */
 				value = sortObject(value, comparator)
 			}
@@ -53,7 +57,11 @@ export default function sortObject<T extends IndexedObject>(
 		if (value != null) {
 			if (Array.isArray(value)) {
 				value = sortArray(value, comparator)
-			} else if (typeof value === 'object') {
+			} else if (
+				typeof value === 'object' &&
+				Object.prototype.toString.call(value) === '[object Object]' &&
+				Object.getPrototypeOf(value) === Object.prototype
+			) {
 				value = sortObject(value, comparator)
 			}
 		}
