@@ -59,26 +59,42 @@ kava.suite('sortObject', function (suite, test) {
 		deepEqual(actual, expected, 'result to be as expected')
 	})
 
-	test('works well when object values are not traversable objects', function () {
+	test('works well when object values are different that plain objects', function () {
 		// Prepare
+		class TestClass {
+			public value = 'test'
+		}
+		class TestClass2 extends TestClass {
+			public value2 = 'test'
+		}
+
+		const testInstanceOfClass = new TestClass()
+		const testInstanceOfClass2 = new TestClass2()
+
+		const map = new Map()
+		map.set('test', 'test')
+
 		const fixture = {
 			c: new Date('2021-01-01'),
 			a: new Set([1, 2, 3]),
-			b: null,
+			b: [1, 2, 3],
 			d: [
 				{
+					d: null,
 					c: new Date('2021-01-03'),
 					a: new Date('2021-01-04'),
-					b: null,
+					b: map,
 				},
 				{
 					c: new Set([4, 5, 6]),
 					a: new Date('2021-01-06'),
-					b: null,
+					b: testInstanceOfClass,
+					e: {},
 					d: [
 						{
 							c: new Date('2021-01-07'),
 							a: new Date('2021-01-08'),
+							d: testInstanceOfClass2,
 							b: null,
 						},
 					],
@@ -87,29 +103,34 @@ kava.suite('sortObject', function (suite, test) {
 		}
 		const expected = {
 			a: new Set([1, 2, 3]),
-			b: null,
+			b: [1, 2, 3],
 			c: new Date('2021-01-01'),
 			d: [
 				{
 					a: new Date('2021-01-04'),
-					b: null,
+					b: map,
 					c: new Date('2021-01-03'),
+					d: null,
 				},
 				{
 					a: new Date('2021-01-06'),
-					b: null,
+					b: testInstanceOfClass,
 					c: new Set([4, 5, 6]),
 					d: [
 						{
 							a: new Date('2021-01-08'),
 							b: null,
 							c: new Date('2021-01-07'),
+							d: testInstanceOfClass2,
 						},
 					],
+					e: {},
 				},
 			],
 		}
+
 		const actual = sortObject(fixture)
+
 		deepEqual(actual, expected, 'result to be as expected')
 	})
 })
